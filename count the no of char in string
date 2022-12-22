@@ -1,0 +1,5 @@
+str=input("enter a string: ")
+l=len(str)
+d={str:l}
+print("dictionary is")
+print(d)
