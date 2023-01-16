@@ -1,0 +1,381 @@
+1.   IMPLEMENTION OF LIST
+        l3=[20,30,40,59,69,99,76,87,90]
+       print(l3)
+       print('list slicing’, l3[2:5])
+       print('count is',l3.count(30))
+       l3.append(200)
+       print('appending element',l3)
+       print('index is',l3.index(20))
+       print('max of list’,max(l3))
+       print('minimum of list',min(l3))
+       print('length og list is',len(l3))
+       l3.reverse()
+       print('revered list',l3)
+       print('popped element',l3.pop(0))
+       print('sorted is',sorted(l3))
+       print(l3)
+       l3.sort()
+       print('after sorting',l3)
+       l5=l3.copy
+       print('copied list is',l5)
+       l3=l3*2
+       print(l3)
+       print((40 in l3))
+       print((500in l3))
+
+
+
+
+
+
+
+OUTPUT
+[20, 30, 40, 59, 69, 99, 76, 87, 90]
+list slicing [40, 59, 69]
+count is 1
+appending element [20, 30, 40, 59, 69, 99, 76, 87, 90, 200]
+index is 0
+max of list 200
+minimum of list 20
+length og list is 10
+revered list [200, 90, 87, 76, 99, 69, 59, 40, 30, 20]
+popped element 200
+sorted is [20, 30, 40, 59, 69, 76, 87, 90, 99]
+[90, 87, 76, 99, 69, 59, 40, 30, 20]
+after sorting [20, 30, 40, 59, 69, 76, 87, 90, 99]
+copied list is <built-in method copy of list object at 0x000002597D658B00>
+[20, 30, 40, 59, 69, 76, 87, 90, 99, 20, 30, 40, 59, 69, 76, 87, 90, 99]
+True
+False
+ 
+2. IMPLEMENTION ON TUPLE
+     tup1=()
+     print(tup1)
+     print(type(tup1))
+     tup2=(45,)
+     print('single element tuple',tup2)
+     tup3=tuple(range(10,20))
+     print('tuple with range',tup3)
+     for i in tup3:
+     print(i)
+     l1=[20,30,40]
+     tup5=tuple(l1)
+     print('tuple from list is',tup5)
+     tup6=tup5+tup3
+     print('tuple by concatenation',tup6)
+     print('tuple slicing',tup6[2:7])
+     print('tuple from beginning',tup6[ :8])
+     print('count of a number',tup6.count(20))
+     print('position of the no is ',tup6.index(30))
+     print('min of tuple',min(tup6))
+     print('max of tuple',max(tup6))
+     print('length of tuple',len(tup6))
+     print('sort without modifying tuple is ',sorted(tup6))
+     t=tup6*3
+     print('new tuple by repetition of tuple',t)
+     print('presence of element in tuple',(40 in tup6))
+     print('absence of elemnet in tuple',(500 in tup6))
+
+
+
+
+OUTPUT
+
+()
+<class 'tuple'>
+single element tuple (45,)
+tuple with range (10, 11, 12, 13, 14, 15, 16, 17, 18, 19)
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+tuple from list is (20, 30, 40)
+tuple by concatenation (20, 30, 40, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19)
+tuple slicing (40, 10, 11, 12, 13)
+tuple from beginning (20, 30, 40, 10, 11, 12, 13, 14)
+count of a number 1
+position of the no is 1
+min of tuple 10
+max of tuple 40
+length of tuple 13
+sort without modifying tuple is  [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 30, 40]
+new tuple by repetition of tuple (20, 30, 40, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 30, 40, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 30, 40, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19)
+presence of element in tuple True
+absence of element in tuple False
+
+ 
+
+3.  WRITE A PROGRAM TO COUNT NUMBER OF CHARACTER IN STRING AND STORED IN A DICTIONARY DATA STRUCTURE                                   
+
+       str=input (“Enter a string”)
+       l=len(str)
+       d = {str: l}
+       print (‘dictionary is ‘)
+       print(d) 
+
+
+OUTPUT
+Enter a String: AKASH
+dictionary is
+{'AKASH': 5}
+ 
+4. WIRTE A PROGRAM TO READ THE LINES WHICH DOESNOT CONTAIN THE CHARACTERS ‘A’ FROM A FILE AND WRITE ONTO A ANOTHER FILE
+
+import re
+f=open("text.txt","r")
+txt=f.readlines()
+print(txt)
+l=len(txt)
+f2=open("new.txt","w")
+for i in range(0,l):
+    x=re.search('a',txt[i])
+    if not x:
+        f2.write(txt[i])
+f2.close()
+f2=open("new.txt","r")
+print(f2.read())             
+
+
+OUTPUT
+['the people in the world \n', 'armed weapon\n', 'Akash is a good person\n', 'bike rider\n', 'god gift']
+the people in the world 
+bike rider
+god gift
+ 
+
+5.WRITE A PROGRAM TO IMPLEMENT A STACK AND QUEUE USING LIST DATA STRUCTURE
+
+
+ 
+ch=1
+l1=[20,30,40,50]
+l2=[45,35,65,85,95]
+while(ch==1):
+    print("1.stack operation\n")
+    print("2.queue operation\n")
+    ch=int(input("enter your choice"))
+    if(ch==1):
+        print('stack is',l1)
+        print('1.push\n')
+        print('2.pop\n')
+        print('enter your choice')
+        ch2=int(input())
+        if(ch2==1):
+            no=int(input("enter a no to push"))
+            l1.append(no)
+            print('list after push',l1)
+        elif(ch2==2):
+            print('popped element is',l1.pop())
+            print('listafter pop is',l1)
+        else:
+            print('illegal choice')
+    elif(ch==2):
+            print('queue is',l2)
+            print('1.insert')
+            print('2.delete')
+            print('enter your choice')
+            ch2=int(input())
+            if(ch2==1):
+                no=int (input("enter no to insret"))
+                l2.insert(len(l2),no)
+                print(l2)
+            elif(ch2==2):
+                print('delete element is',l2.pop(0))
+                print(l2)
+            else:
+                print('wrong choice')
+    else:
+            print('wrong choice')
+            print('enter 1 to contiue')
+            ch=int(input())
+ 
+6.WRITE A PYTHON PROGRAM TO CREATE STUDENT TABLE AND FIND MN,MAX,SUM AND AVERAGE OF MARKS IN A STUDENT TABLE
+
+import mysql.connector as conn
+db=conn.connect(host="localhost", user="root", password="root",database="emp")
+cu=db.cursor()
+#sql1="create table student( s_id varchar(10),name varchar(20),dept varchar(10),marks varchar(10));"
+#cu.execute(sql1)
+
+sql2="insert into student values(%s,%s,%s,%s)"
+val=[('12','arun','bca','78'),
+     ('55','ramu','bca','89'),
+     ('78','reethu','bca','99'),
+     ('67','biju','bca','68')
+     ]
+
+cu.executemany(sql2,val)
+db.commit()
+
+#db.close()
+
+sql3="select max(marks) from student"
+cu.execute(sql3)
+max1=cu.fetchall()
+print("maximum is ",max1)
+
+sql4="select min(marks) from student"
+cu.execute(sql4)
+min1=cu.fetchall()
+print("min is",min1)
+
+sql5="select sum(marks) from student"
+cu.execute(sql5)
+sum1=cu.fetchall()
+print("sum is",sum1)
+
+
+sql6="select avg(marks) from student"
+cu.execute(sql6)
+avg1=cu.fetchall()
+print("avg is",avg1)
+ 
+7. WRITE A PROGRAM TO CREATE CUSTOMER TABLE AND FIND TOTAL NUMBER OF CUSTOMERS FROM EACH COUNTRY IN THE TABLE (CUSTOMER ID,NAME,AGE,COUNTRY USING GROUP BY)
+
+import mysql.connector as conn
+db=conn.connect(host="localhost", user="root", password="root",database="emp")
+cu=db.cursor()
+sql1="create table customer(customer_id varchar(10),cname varchar(20),age varchar(10),country varchar(10));"
+cu.execute(sql1)
+
+sql2="insert into customer values(%s,%s,%s,%s)"
+val=[('12','arun','58','India'),
+     ('55','ramu','45','US'),
+     ('78','reethu','23','India'),
+     ('67','biju','34','US'),
+     ('44','minu','44','India'),
+     ('46','jiji','45','India'),
+     ('67','ravi','52','Dubai')
+     ]
+
+cu.executemany(sql2,val)
+db.commit()
+
+sql3="select count(customer_id),country from customer group by  country"
+cu.execute(sql3)
+details=cu.fetchall()
+for i in details:
+    print(i)
+
+
+db.close() 
+8. WRITE A PROGRAM TO OPEN A FILE READ OOD LINES FROM THE FILE AND WRITE IT INTO A NEW FILE
+
+f=open("text.txt","r")
+lis=f.readlines()
+le=len(lis)
+f2=open("bh.txt","w")
+for i in range(0,le,2):
+    f2.write(lis[i])
+f2.close()
+f2=open("bh.txt","r")
+print(f2.read())
+
+OUTPUT
+the people in the world 
+Akash is a good person
+god gift
+ 
+9.WRITE A PROGRAM TO CREATE EMPLOYEE TABLE INSERT 5 TUPLES AND DELETE A PARTICULAR EMPLOYEE RECORD FROM THE EMPLOYEE TABLE
+
+import mysql.connector as conn
+db = conn.connect(host="localhost",
+                  user="root",
+                  password="root")
+cu = db.cursor()
+#sql1 = "create database emp;"
+sql2 = "use emp;"
+#sql3 = "create table employee(emp_id varchar(10), name varchar(20),dept varchar(10),salary varchar(10));"
+sql4 = "Insert into employee(emp_id,name,dept,salary),values('001','abc','it','1000');"
+#cu.execute(sql1)
+cu.execute(sql2)
+cu.execute(sql3)
+cu.execute(sql4)
+sql5 = "select*from employee"
+sql6 = "delete from employee where emp_id='003';"
+cu.execute(sql5)
+cu.execute(sql6)
+cu.fetchall()
+db.close()
+
+ 
+10. WRITE A PROGRAM TO LINE PLOT USING PYPLOT
+
+import matplotlib.pyplot as plot
+a=[1,2,3,4,5]
+b=[0,0.6,0.2,15,10]
+plot.plot(a,b,label="line plot")
+plot.xlabel(" x axis")
+plot.ylabel("y axis")
+plot.show()
+	
+OUTPUT
+ 
+
+ 
+11. WRITE A PROGRAM FOR HISTOGRAM USING PYPLOT
+
+import matplotlib.pyplot as plot
+ages=[2,5,70,40,30,45,50,45,43,40,44,60,7,13,57,18,90,77,32,21,20,40]
+plot.hist(ages,color="blue",histtype="bar",rwidth=0.8)
+plot.show()
+
+OUTPUT
+ 
+ 
+12. WRITE A PROGRAM FOR EXPOENTIAL USING PYTHON
+
+def fact(n,x):
+    f=1
+    fact=1
+    for i in range(1,n+1):
+        f=f*x
+        fact=fact*i
+    return f,fact
+
+import expo
+n=int(input("Enter n number:"))
+x=int(input("Enter x value:"))
+s=1
+for i in range(1,n+1):
+    r1,r2=expo.fact(i,x)
+    s=s+(r1/r2)
+print("sum is",s)
+
+OUTPUT
+Enter n number:4
+Enter x value:4
+sum is 34.33333333333333 
+13.WRITE A PROGRAM FOR RANDOM THAT GENERATES RANDOM NUMBERS BTWEEN 1 AND 6 (SIMULATES A DICES)
+
+from random import randrange
+for i in range(0,4):
+    no=randrange(1,6)
+    if(no==1):
+        print("one")
+    elif(no==2):
+        print("two")
+    elif(no==3):
+        print("three")
+    elif(no==4):
+        print("four")
+    elif(no==5):
+        print("five")
+    elif(no==6):
+        print("six")
+
+
+OUTPUT
+
+four
+four
+three
+three
+
+
