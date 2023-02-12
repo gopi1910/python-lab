@@ -1,11 +1,11 @@
-     tup1=()
-     print(tup1)
-     print(type(tup1))
-     tup2=(45,)
-     print('single element tuple',tup2)
-     tup3=tuple(range(10,20))
-     print('tuple with range',tup3)
-     for i in tup3:
+    tup1=()
+print(tup1)
+print(type(tup1))
+tup2=(45,)
+print('single element tuple',tup2)
+tup3=tuple(range(10,20))
+print('tuple with range',tup3)
+for i in tup3:
      print(i)
      l1=[20,30,40]
      tup5=tuple(l1)
