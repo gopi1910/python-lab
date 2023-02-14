@@ -16,7 +16,7 @@ while(ch==1):
             l1.append(no)
             print('list after push',11)
         elif(ch2==2):
-            print('popped element is',l.pop())
+            print('popped element is',l1.pop())
             print('list after pop is',l1)
         else:
             print('illegal choice')
